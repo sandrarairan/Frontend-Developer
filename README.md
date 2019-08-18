@@ -4,7 +4,7 @@ Escuela JS- Curso Platzi
 - [¿Qué son y para qué nos sirven HTML y CSS?](#¿Qué-son-y-para-qué-nos-sirven-HTML-y-CSS?)
 - [DOM, CSSOM, Render Tree y proceso renderizado Web](#DOM,-CSSOM,-Render-Tree-y-proceso-renderizado-Web)
 - [Conceptos iniciales de HTML](#Conceptos-iniciales-de-HTML) 
-- [](#)
+- [Conceptos iniciales de CSS](#Conceptos-iniciales-de-CSS)
 - [](#)
 - [](#) 
 - [](#) 
@@ -68,3 +68,40 @@ También existen elementos vacíos. Estos elementos no tienen contenido ni etiqu
                     </html>
   ```
   
+**La importancia del código semántico**
+Es importante que como desarrolladores tengamos claro el significado de escribir código. Debes ser consciente de que la manera en la que codeas tenga sentido.
+
+La semántica HTML no es más que darle sentido y estructura a lo que estas escribiendo. Muy importante para el navegador. No todos los elementos deberían ser un div.
+
+```<body>
+	<header>
+		<nav></nav>
+		<aside></aside>
+	</header>
+	<main>
+		<section>
+			<article> ... </article>
+		</section>
+	</main>
+	<footer></footer>
+</body>
+```
+
+**Tipos de errores en HTML, debugging y servicio de validación de etiquetas**
+Errores sintácticos: Son errores de escritura en el código y evitan que el programa funcione. Pueden ser errores de tipado.
+
+Errores lógicos: En estos la sintaxis es correcta, pero el código no hace lo que debería. El programa funciona, pero de forma incorrecta.
+-En esta página se colcoa el coódigo para validar si tiene errores:
+https://validator.w3.org/
+
+## Conceptos iniciales de CSS
+
+**Anatomía de una declaración CSS: Selectores, Propiedades y Valores
+Nuestros estilos con CSS se componen de:**
+
+Selector: son la referencia a los elementos HTML que queremos estilizar. Los nombres de estas etiquetas van seguidas de una llave de apertura y otra de cierre ({}). Por ejemplo: h1 {}.
+Propiedades: son el tipo de estilo que queremos darle a nuestros elementos. Van seguidas de dos puntos (:). Las propiedades deben estar dentro de las llaves del selector que definimos anteriormente. Podemos escribir diferentes propiedades en un mismo selector. Por ejemplo: h1 { color: }.
+Valores: son el estilo que queremos que tomen nuestros elementos HTML con respecto a una propiedad. Van seguidas de un punto y coma (;). Por ejemplo: h1 { color: red; }.
+h1 {
+  color: red;
+}
