@@ -5,10 +5,10 @@ Escuela JS- Curso Platzi
 - [DOM, CSSOM, Render Tree y proceso renderizado Web](#DOM,-CSSOM,-Render-Tree-y-proceso-renderizado-Web)
 - [Conceptos iniciales de HTML](#Conceptos-iniciales-de-HTML) 
 - [Conceptos iniciales de CSS](#Conceptos-iniciales-de-CSS)
-- [](#)
-- [](#) 
-- [](#) 
-- [](#)
+- [Modelo de caja](#Modelo-de-caja)
+- [Valores relativos y absolutos](#Valores-relativos-y-absolutos) 
+- [Arquitectura CSS](#Arquitectura-CSS) 
+- [Construcción de componentes](#Construcción-de-componentes)
 - [](#)
 - [](#) 
 - [](#)
@@ -177,3 +177,231 @@ Todos los elementos de HTML tienen un modelo de caja y esta compuesto por cuatro
   ```
     
 }
+
+## Valores relativos y absolutos
+Los valores absolutos son, por ejemplo, centímetros, milímetros, pixeles y pulgadas. Se llaman de esta forma porque no tienen en cuenta a nadie más, no depende de la medida de otra unidad.
+
+Los valores relativas, llevan este nombre porque depende de otra unidad de medida o elemento. Por ejemplo, porcentajes, vmx, em, entre otros.
+
+Recuerda que podemos darle estilos a etiquetas HTML muy específicas indicando dónde se van a encontrar. Por ejemplo: si queremos darle estilos únicamente a la imagen que está dentro del header, podemos usar el selector css header img { ... }.
+
+**Displays en CSS**
+Todos los elementos en CSS son cuadrados o rectángulos y aparte de eso, estos elementos tienen un comportamiento que se define a través de la propiedad display. Los display más comunes y usados son: 
+block, inline, inline-block, none, table, flex y grid. Veamos de qué se tratan:
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://css-tricks.com/snippets/css/complete-guide-grid/
+
+**Funciones de las propiedades CSS más usadas**
+Width
+Height
+Background
+backgroun-color
+color
+border
+border-radius
+margin
+padding
+font-size
+opacity
+outlet
+box-sizing
+Transition
+animation
+
+**El posicionamiento en CSS** es una de las cosas más importantes, pues establece cómo van a estar ubicados nuestros elementos en la pantalla.
+
+En CSS los elementos se posicionan utilizando las propiedades top (superior), bottom (inferior), left (izquierda) y right (derecha), pero sólo funcionarán si la propiedad position está establecida. Esto quiere decir que si quiero que mi elemento div esté completamente a la derecha, debo escribir en mi CSS lo siguiente:
+
+div { position: absolute: right: 0px; }
+
+La propiedad position tiene 7 valores diferentes: relative, absolute, fixed, sticky, static, initial e inherit. Veremos de qué se tratan:
+Position: Relative. position:absolute
+position:fixed
+Position: sticky
+Position:static
+Position:initial
+Position:inherital
+
+https://developer.mozilla.org/es/docs/Web/CSS/position
+
+## Arquitectura CSS
+
+**¿Qué son y para qué nos sirven las arquitecturas CSS?**
+Objetivos de una arquitectura CSS:
+
+Predecible
+Reutilizable
+Mantenible
+Escalable
+Buenas Practicas:
+
+Establecer reglas (en equipo)
+Explicar estructura base
+Establecer estándares de codificación
+Evitar largas hojas de estilos
+Documentación
+
+**OOCSS, BEM, SMACSS, ITCSS y Atomic Design**
+- OOCSS: https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/
+
+```
+<style>
+.gobalwidth{
+width: 100px;
+}
+.header{
+}
+.footer{
+}
+</style>
+<body>
+ <header class="header globalwidth"></header>
+ <footer class="footer globalwidth"></footer>
+ </body>
+ ```
+ - BEM: http://getbem.com/introduction/
+ 
+ ```
+ <body>
+  <header>
+    <button class="header__button--red">RED</button>
+    <button class="header__button--yellow">YELLOW</button>
+  </header>
+</body>        
+
+SE MANEJA CON BLOQUE, ELEMENTO Y LEMENTO MODIFICADOR
+``` 
+- SMACSS: http://smacss.com/
+BASE: BOTONES
+LAYAOUT
+MODULE
+STATE
+THEME=
+SMACSS
+
+- ITCSS:https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+
+- Atomic Design:http://bradfrost.com/blog/post/atomic-web-design/
+
+## Construcción de componentes
+
+Un componente, tanto en diseño como desarrollo web, es un elemento muy pequeño que tiene la capacidad de ser reutilizado en diferentes partes de una aplicación. Por ejemplo: botones, iconos, cards, entre otras.
+
+https://storybook.js.org/
+
+**Flexbox**
+Uno de los trabajos más difíciles en CSS es alinear elementos. Para hacerlo más fácil podemos contar con Flexbox.
+
+Es importante tener presente que tendremos un contenedor y los elementos que queremos organizar dependiendo de nuestras necesidades.
+https://darekkay.com/dev/flexbox-cheatsheet.html
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://flexboxfroggy.com/#es
+Justify-content:
+flex-start: Alinea elementos al lado izquierdo del contenedor.
+flex-end: Alinea elementos al lado derecho del contenedor.
+center: Alinea elementos en el centro del contenedor.
+space-between: Muestra elementos con la misma distancia entre ellos.
+space-around: Muestra elementos con la misma separación alrededor de ellos.
+
+**Nuestro nuevo sistema de layout: CSS Grid**
+Con CSS Grid podemos maquetar todo el layout/estructura general de nuestro sitio para que se adapten a diferentes tamaños de pantalla, lo que conocemos como diseño responsivo.
+
+Al igual que Flebox, tenemos propiedades diferentes, tanto para el contenedor como para los elementos, y podemos usarlos dependiendo de nuestras necesidades.
+https://developer.mozilla.org/en-US/docs/Web/CSS/grid
+
+https://labs.jensimmons.com/
+
+**Estructura con HTML y BEM de un menú desplegable**
+
+**Estilizando nuestro menú desplegable con CSS**
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+https://fonts.google.com/
+font:muli
+``` 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <title>Header</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    font-family: 'Muli', sans-serif;
+    background-color: #64c4ed;
+  }
+  header {
+    background-color: #207561;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__img {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .header__menu{
+      margin-right: 30px
+  }
+  .header__menu ul{
+      display: none;
+      list-style: none;
+      padding: 0px;
+      position: absolute;
+      width: 100px;
+      text-align: right;
+      margin: 0px 0px 0px -14px;
+  }
+  .header__menu:hover ul, ul:hover{
+    display: block;
+  }
+  .header__menu li{
+    margin: 10px 0px;
+  }
+  .header__menu li a{
+    color: white;
+    text-decoration: none;
+  }
+  .header__menu li a:hover{
+    text-decoration: underline;
+  }
+  .header__menu--profile{
+     margin-right: 8px;
+     display: flex;
+     align-items: center;
+  }
+  .header__menu--profile img{
+      margin-right: 8px;
+      color: white;
+  }
+  .header__menu--profile p{
+      margin-right: 0px;
+    color: white;
+  }
+</style>
+<body>
+  <header class="header">
+    <img class="header__img" src="./logo-platzi-video-BW2.png" alt="logo">
+    <div class="header__menu">
+     <div class="header__menu--profile">
+       <img src="./user-icon.png" alt="user">
+       <p>Perfil</p>
+     </div>
+     <ul>
+         <li><a href="/">Cuenta</a></li>
+         <li><a href="/">Cerrar Sesión</a></li>
+     </ul>
+    </div>
+  </header>
+</body>
+</html>
+```
