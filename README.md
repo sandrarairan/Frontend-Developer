@@ -9,10 +9,14 @@ Escuela JS- Curso Platzi
 - [Valores relativos y absolutos](#Valores-relativos-y-absolutos) 
 - [Arquitectura CSS](#Arquitectura-CSS) 
 - [Construcción de componentes](#Construcción-de-componentes)
-- [](#)
+- [Maquetación y diseño responsivo](#Maquetación-y-diseño-responsivo)
 - [](#) 
 - [](#)
 - [](#)
+- [](#)
+- [](#) 
+- [](#)
+- [](#)**
 <!-- toc -->
 ## ¿Qué son y para qué nos sirven HTML y CSS?
 HTML: Es un lenguaje de marcado usado para decirle a tu navegador cómo estructurar las páginas web que visitas. No es un lenguaje de programación.
@@ -405,3 +409,311 @@ font:muli
 </body>
 </html>
 ```
+**Buscador**
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <title>Header</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    font-family: 'Muli', sans-serif;
+    background-color: #ff8a5c;
+  }
+  header {
+    background-color: #207561;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__img {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .header__menu{
+      margin-right: 30px
+  }
+  .header__menu ul{
+      display: none;
+      list-style: none;
+      padding: 0px;
+      position: absolute;
+      width: 100px;
+      text-align: right;
+      margin: 0px 0px 0px -14px;
+  }
+  .header__menu:hover ul, ul:hover{
+    display: block;
+  }
+  .header__menu li{
+    margin: 10px 0px;
+  }
+  .header__menu li a{
+    color: white;
+    text-decoration: none;
+  }
+  .header__menu li a:hover{
+    text-decoration: underline;
+  }
+  .header__menu--profile{
+     margin-right: 8px;
+     display: flex;
+     align-items: center;
+  }
+  .header__menu--profile img{
+      margin-right: 8px;
+      color: white;
+  }
+  .header__menu--profile p{
+      margin-right: 0px;
+    color: white;
+  }
+  .main{
+    height: 300px;
+  }
+  .main_title{
+    color: white;
+    font-size: 25px;
+  }
+  .input{
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid white;
+    border-radius: 35px;
+    color: white;
+    font-family: 'Muli', sans-serif;
+    font-size:16px;
+    height: 50px;
+    padding: 0px 20px;
+    width: 70%;
+    outline: none;
+  }
+  ::placeholder{
+    color:white;
+  }
+</style>
+<body>
+  <header class="header">
+    <img class="header__img" src="./logo-platzi-video-BW2.png" alt="logo">
+    <div class="header__menu">
+     <div class="header__menu--profile">
+       <img src="./user-icon.png" alt="user">
+       <p>Perfil</p>
+     </div>
+     <ul>
+         <li><a href="/">Cuenta</a></li>
+         <li><a href="/">Cerrar Sesión</a></li>
+     </ul>
+    </div>
+  </header>
+  <section class="main">
+    <h2 class="main_title">¿Qué quieres ver hoy?</h2>
+    <input class="input" type="text" placeholder="Buscar...">
+  </section>
+</body>
+</html>
+```
+
+**Creación de un carousel de imágenes con CSS: Estructura principal**
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Carrousel 1</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+  }
+  .carousel {
+    width: 100%;
+    overflow: scroll;
+    padding: 30px;
+    position: relative;
+  }
+  .carousel__container {
+    white-space: nowrap;
+    margin: 70px 0px;
+    padding-bottom: 10px; 
+  }
+  .carousel__item {
+    background-color: palevioletred;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+  }
+  .carousel__item:hover ~ .carousel__item {
+    transform: translate3d(100px, 0, 0);
+  }
+  .carousel__container:hover .carousel__item {
+    opacity: 0.3;
+  }
+  .carousel__container:hover .carousel__item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+</style>
+<body>
+  <section class="carousel">
+    <div class="carousel__container">
+      <div class="carousel__item">
+      </div>
+      <div class="carousel__item">
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+```
+**Creación de un carousel de imágenes con CSS: Detalle de cada item**
+caruse-2.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Carousel 2</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+  }
+  .carousel {
+    width: 100%;
+    overflow: scroll;
+    padding: 30px;
+    position: relative;
+  }
+  .carousel__container {
+    white-space: nowrap;
+    margin: 70px 0px;
+    padding-bottom: 10px; 
+  }
+  .carousel-item {
+    background-color: palevioletred;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+    position: relative;
+  }
+  .carousel-item:hover ~ .carousel-item {
+    transform: translate3d(100px, 0, 0);
+  }
+  .carousel__container:hover .carousel-item {
+    opacity: 0.3;
+  }
+  .carousel__container:hover .carousel-item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  .carousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+  }
+  .carousel-item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    font-size: 10px;
+    opacity: 0;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .carousel-item__details:hover {
+      opacity: 1;
+  }
+</style>
+<body>
+  <section class="carousel">
+    <div class="carousel__container">
+      <div class="carousel-item">
+        <img class="carousel-item__img" src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="People">
+        <div class="carousel-item__details">
+          <div>
+            <img src="../iconos/play-icon.png" alt="Play">
+            <img src="../iconos/plus-icon1.png" alt="Plus">
+          </div>
+          <p class="carousel-item__details--title">Título descriptivo</p>
+          <p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+```
+**Visualización de un botón usando storybook para HTML**
+https://storybook.js.org/docs/guides/guide-html/
+
+http://localhost:49972/?path=/story/button--with-emoji
+
+## Maquetación y diseño responsivo
+
+**Instalación de SASS y configuración incial
+Instalación de SASS con NPM:
+
+npm install -g sass
+Si usas Windows puedes usar el gestor de paquetes Chocolatey Package Manager e instalar SASS con el siguiente comando:
+
+choco install sass
+Si usas Mac puedes usar Homebrew para instalar SASS con el siguiente comando:
+
+brew install sass/sass/sass
+
+https://github.com/teffcode/sass-workshop
+
+- npm install -g sass
+- Al archivo styles.css le renombramos por styles.scss
+- ➜  platzivideo git:(master) ✗ pwd
+/Users/sandrarairan/Documents/Platzi/Frontend Developed/platzivideo
+- ➜  platzivideo git:(master) ✗ sass /Users/sandrarairan/Documents/Platzi/Frontend Developed/platzivideo/iniciar-sesion/styles.sccs /Users/sandrarairan/Documents/Platzi/Frontend Developed/platzivideo/iniciar-sesion/styles.ccs
+
+se crean los archivis scss
+
+**La accesibilidad y nuestra responsabilidad como desarrolladores**
+Debemos pensar en esas personas con una discapacidad visual que no tienen la posibilidad de ver lo mismo que la mayoría de nosotros. Estas personas no siempre usan el mouse, sino lectores de pantalla.
+
+Un Lector de Pantalla se encarga de leer toda la aplicación elemento por elemento. Que los lectores de pantalla funcionen es responsabilidad de las y los desarrolladores: debemos tener muy buena semántica, usar las etiquetas y atributos adecuados entre otras.
+
+Lectores de pantalla : NVIDIA
+JAWS
+VOICEOVER - MAC
+
+**Mejorando la accesibilidad de nuestra página de inicio**
+https://support.apple.com/es-lamr/HT202362
+
+https://www.ssa.gov/accessibility/andi/help/install.html
+
+https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/tabindex
+
